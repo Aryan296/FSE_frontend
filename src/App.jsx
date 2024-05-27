@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./Pages/Login";
+import ReactDOM from 'react-dom';
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
@@ -20,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          "https://fse-3.onrender.com/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
@@ -52,5 +53,5 @@ const App = () => {
     </>
   );
 };
-
+ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
