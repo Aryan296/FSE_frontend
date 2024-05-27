@@ -12,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { Context } from "./main";
 import Login from "./Pages/Login";
-import ReactDOM from 'react-dom';
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
@@ -53,5 +52,4 @@ const App = () => {
     </>
   );
 };
-ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
